@@ -1,0 +1,213 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background: hsl(229, 57%, 11%);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Global */
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.showcase {
+    background: url('./images/bg-desktop.png') no-repeat;
+    background-position-y: 50vh;
+    background-size: contain;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Left Float */
+
+.float {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.float-left {
+    width: 30%;
+    height: 200px;
+    background: hsl(228, 56%, 26%);
+    padding: 2rem;
+    border-radius: 1rem 5rem 1rem 1rem;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.files {
+    padding-top: 1.5rem;
+}
+
+.file {
+    background: hsl(229, 57%, 11%);
+    padding: .9rem;
+    border-radius: 10px;
+    margin-right: .8rem;
+    height: 3rem;
+    width: 3rem;
+}
+
+
+/* Right Float */
+
+.float-right {
+    width: 70%;
+    height: 160px;
+    background: hsl(228, 56%, 26%);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 2.5rem;
+}
+
+.float-right-content {
+    width: 90%;
+    margin: auto;
+}
+
+
+/* Progress Bar */
+
+.progress {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    background: hsl(229, 57%, 11%);
+    margin-top: 2rem;
+    padding: 0 5px;
+    height: 1.5em;
+    width: 100%;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 1rem;
+    background: linear-gradient(135deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    border-radius: 10px;
+}
+
+.progress-bar-mini {
+    height: 1rem;
+    border-radius: 50%;
+    width: 3%;
+    float: right;
+    background: #ffffff;
+}
+
+
+/* GB */
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.let {
+    background: #ffffff;
+    color: hsl(229, 7%, 55%);
+    padding: 5px 15px;
+    border-radius: 10px;
+    position: absolute;
+    border-bottom-right-radius: 1px;
+    text-align: center;
+    top: 35%;
+    right: 12%;
+}
+
+.let::after {
+    content: '';
+    border: 10px solid transparent;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border-top: 10px solid #ffffff;
+    border-right: 10px solid #ffffff;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.gb {
+    color: #000000;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+/* Media Queries */
+
+@media(max-width: 768px) {
+    .showcase {
+        background: url('./images/bg-mobile.png') no-repeat center center/cover;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+    .float {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .float-left,
+    .float-right {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+    .float-left {
+        margin-bottom: 1rem;
+    }
+    .float-right {
+        margin-top: 0;
+    }
+    .float-right-content {
+        text-align: center;
+    }
+    .progress-bar-mini {
+        width: 5%;
+    }
+    .let {
+        top: 71vh;
+        right: 25vh;
+        border-radius: 10px;
+        padding: 10px 40px;
+    }
+    .let {
+        top: 70%;
+        right: 35%;
+        border-radius: 10px;
+        padding: .1rem 1.5rem;
+    }
+    .let::after {
+        display: none;
+    }
+}
+
+@media(max-height: 500px) {
+    .float-left {
+        width: 50%;
+    }
+    .let {
+        top: 20%;
+    }
+}
